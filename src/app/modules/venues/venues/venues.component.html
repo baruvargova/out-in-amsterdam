@@ -1,0 +1,4 @@
+<app-venue-filter></app-venue-filter>
+
+<app-venue-list *ngIf="selectedView === BaseViewEnum.Table" [venues]="venues"></app-venue-list>
+<app-venue-map *ngIf="selectedView === BaseViewEnum.Map" [venues]="venues"></app-venue-map>

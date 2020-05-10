@@ -1,0 +1,20 @@
+{
+  "menu": {
+    "venues": "venues"
+  },
+
+  "venues": {
+    "filter": {
+      "name": "Name",
+      "startYear": "Start year",
+      "cities": "City",
+      "zip": "Zip code"
+    },
+    "name": "Vanue name",
+    "city": "City",
+    "zip": "Post code",
+    "address": "Address",
+    "startYear": "Start year",
+    "detail": "Show detail"
+  }
+}

@@ -1,0 +1,26 @@
+<div class="p-4">
+  <table class="table table-striped table-responsive-sm">
+    <thead>
+      <tr>
+        <th translate="venues.name"></th>
+        <th translate="venues.city"></th>
+        <th translate="venues.zip"></th>
+        <th translate="venues.address"></th>
+        <th translate="venues.startYear"></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venue of venues">
+        <td>{{venue.title}}</td>
+        <td>{{venue.location.city}}</td>
+        <td>{{venue.location.zipcode}}</td>
+        <td>{{venue.location.adress}}</td>
+        <td>{{venue.dates.startYear}}</td>
+        <td>
+          <a class="btn btn-link" translate="venues.detail" [routerLink]="[venue.trcid, 'detail']"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

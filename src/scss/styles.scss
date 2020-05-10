@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "base";
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/utilities';
+
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/navbar';
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
