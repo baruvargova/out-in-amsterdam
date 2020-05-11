@@ -11,6 +11,7 @@ import { NearbyEventsService } from '../../../core/services/nearby-events.servic
 import { BaseComponent } from '../../../shared/components/base/base.component';
 import { BaseViewEnum } from '../../../shared/enums/base-view.enum';
 import { EventModel } from '../../../shared/models/event.model';
+import { VenueModel } from '../../../shared/models/venue.model';
 
 @Component({
   selector: 'app-nearby-events',
@@ -19,6 +20,7 @@ import { EventModel } from '../../../shared/models/event.model';
 })
 export class NearbyEventsComponent extends BaseComponent implements OnInit {
   @Input()nearbyEvents: EventModel[]
+  @Input()venue: VenueModel
   
   public selectedView: BaseViewEnum
   public BaseViewEnum = BaseViewEnum

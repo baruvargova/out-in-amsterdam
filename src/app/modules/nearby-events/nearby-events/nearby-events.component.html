@@ -2,4 +2,7 @@
 
 <app-nearby-events-filter></app-nearby-events-filter>
 
+<app-view-toggle class="float-right mb-4 mr-4" [activeView]="selectedView" (changeView)="switchViewTo($event)"></app-view-toggle>
+
 <app-nearby-events-list [events]="filteredEvents" *ngIf="selectedView === BaseViewEnum.Table"></app-nearby-events-list>
+<app-event-venue-map [events]="filteredEvents" [venues]="[venue]" [centerByVenue]="true" *ngIf="selectedView === BaseViewEnum.Map"></app-event-venue-map>

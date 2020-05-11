@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NearbyEventsMapComponent } from './nearby-events-map.component';
+import { ViewToggleComponent } from './view-toggle.component';
 
-describe('NearbyEventsMapComponent', () => {
-  let component: NearbyEventsMapComponent;
-  let fixture: ComponentFixture<NearbyEventsMapComponent>;
+describe('ViewToggleComponent', () => {
+  let component: ViewToggleComponent;
+  let fixture: ComponentFixture<ViewToggleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NearbyEventsMapComponent ]
+      declarations: [ ViewToggleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NearbyEventsMapComponent);
+    fixture = TestBed.createComponent(ViewToggleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

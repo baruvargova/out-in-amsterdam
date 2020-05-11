@@ -4,11 +4,10 @@ import { SharedModule } from '../../shared/shared.module';
 import { NearbyEventsComponent } from './nearby-events/nearby-events.component';
 import { NearbyEventsFilterComponent } from './nearby-events-filter/nearby-events-filter.component';
 import { NearbyEventsListComponent } from './nearby-events-list/nearby-events-list.component';
-import { NearbyEventsMapComponent } from './nearby-events-map/nearby-events-map.component';
 
 
 @NgModule({
-  declarations: [NearbyEventsComponent, NearbyEventsFilterComponent, NearbyEventsListComponent, NearbyEventsMapComponent],
+  declarations: [NearbyEventsComponent, NearbyEventsFilterComponent, NearbyEventsListComponent],
   imports: [
     CommonModule,
     SharedModule

@@ -1,21 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
 import { RouterModule } from '@angular/router';
+import {
+  NgbButtonsModule,
+  NgbCheckBox
+} from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { EventVenueMapComponent } from './components/event-venue-map/event-venue-map.component';
+import { ViewToggleComponent } from './components/view-toggle/view-toggle.component';
 
 @NgModule({
-  declarations: [LayoutComponent, NotFoundComponent, HeaderComponent],
+  declarations: [LayoutComponent, NotFoundComponent, HeaderComponent, EventVenueMapComponent, ViewToggleComponent],
   imports: [
     CommonModule,
     TranslateModule,
     NgSelectModule,
+    NgbButtonsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    GoogleMapsModule
   ],
   exports: [
     TranslateModule,
@@ -25,7 +34,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     
     LayoutComponent,
     NotFoundComponent,
-    HeaderComponent
+    HeaderComponent,
+    EventVenueMapComponent,
+    ViewToggleComponent
   ]
 })
 export class SharedModule { }

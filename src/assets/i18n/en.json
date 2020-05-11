@@ -13,6 +13,10 @@
       "9": "October",
       "10": "November",
       "11": "December"
+    },
+    "view": {
+      "0": "Table",
+      "1": "View result on map"
     }
   },
 

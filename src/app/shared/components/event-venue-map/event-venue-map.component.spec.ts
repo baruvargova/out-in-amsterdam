@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VenueMapComponent } from './venue-map.component';
+import { EventVenueMapComponent } from './event-venue-map.component';
 
-describe('VenueMapComponent', () => {
-  let component: VenueMapComponent;
-  let fixture: ComponentFixture<VenueMapComponent>;
+describe('EventVenueMapComponent', () => {
+  let component: EventVenueMapComponent;
+  let fixture: ComponentFixture<EventVenueMapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VenueMapComponent ]
+      declarations: [ EventVenueMapComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VenueMapComponent);
+    fixture = TestBed.createComponent(EventVenueMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

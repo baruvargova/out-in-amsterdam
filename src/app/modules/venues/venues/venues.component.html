@@ -1,4 +1,6 @@
 <app-venue-filter></app-venue-filter>
 
+<app-view-toggle class="float-right mb-4 mr-4" [activeView]="selectedView" (changeView)="switchViewTo($event)"></app-view-toggle>
+
 <app-venue-list *ngIf="selectedView === BaseViewEnum.Table" [venues]="venues"></app-venue-list>
-<app-venue-map *ngIf="selectedView === BaseViewEnum.Map" [venues]="venues"></app-venue-map>
+<app-event-venue-map *ngIf="selectedView === BaseViewEnum.Map" [venues]="venues"></app-event-venue-map>
