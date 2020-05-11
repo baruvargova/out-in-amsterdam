@@ -5,6 +5,7 @@ import { of } from 'rxjs/internal/observable/of';
 import {
   map
 } from 'rxjs/operators';
+import { getDistance } from '../../shared/helpers/distance.helper';
 import {
   isNearby,
   matchEventDate,
@@ -42,7 +43,7 @@ export class NearbyEventsService {
       map((venue: VenueModel) => {
         return this.events
           .filter((event: EventModel) => {
-            event.setVenueDistance(venue)
+            event.setVenueDistance(getDistance(event.location, venue.location))
             return isNearby(event.venueDistance)
           })
           .sort((a: EventModel, b: EventModel) => a.venueDistance - b.venueDistance)

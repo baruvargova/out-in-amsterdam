@@ -1,11 +1,9 @@
 import { createDate } from '../helpers/date.helper';
-import { deg2rad } from '../helpers/math.helper';
 import {
   EventVenueDetailsModel,
   EventVenueLocationModel,
   EventVenueMediaModel
 } from './event-venue-shared.models';
-import { VenueModel } from './venue.model';
 
 export class EventModel {
   trcid: string;
@@ -30,21 +28,9 @@ export class EventModel {
   public get mainMedia(): EventVenueMediaModel {
     return this.media.find(x => x.main);
   }
-
-// distance using Haversine formula
-  public setVenueDistance(venue: VenueModel): void {
-    const R = 6371; // Radius of the earth in km
-    const dLat = deg2rad(this.location.latitude - venue.location.latitude);  // deg2rad below
-    const dLon = deg2rad(this.location.longitude - venue.location.longitude);
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(deg2rad(venue.location.latitude)) * Math.cos(deg2rad(this.location.latitude)) *
-      Math.sin(dLon / 2) * Math.sin(dLon / 2)
-    ;
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const d = R * c; // Distance in km
-    
-    this.venueDistance = d;
+  
+  public setVenueDistance(distance: number): void {
+    this.venueDistance = distance;
   }
 }
 
