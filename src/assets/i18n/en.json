@@ -1,4 +1,21 @@
 {
+  "common": {
+    "months": {
+      "0": "January",
+      "1": "February",
+      "2": "March",
+      "3": "April",
+      "4": "May",
+      "5": "June",
+      "6": "July",
+      "7": "August",
+      "8": "September",
+      "9": "October",
+      "10": "November",
+      "11": "December"
+    }
+  },
+
   "menu": {
     "venues": "venues"
   },
@@ -16,5 +33,23 @@
     "address": "Address",
     "startYear": "Start year",
     "detail": "Show detail"
+  },
+
+  "nearbyEvents": {
+    "title": "Events nearby",
+    "filter": {
+      "name": "Name",
+      "month": "Month",
+      "year": "Year"
+    },
+    "name": "Name",
+    "address": "Address",
+    "start": "Start",
+    "end": "End"
+  },
+
+  "notFound": {
+    "title": "We couldn't find what you are looking for",
+    "info": "please select some available section in menu"
   }
 }

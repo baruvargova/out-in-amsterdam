@@ -6,7 +6,7 @@ import {
 import { VenueService } from '../../../core/services/venue.service';
 import { BaseComponent } from '../../../shared/components/base/base.component';
 import { BaseViewEnum } from '../../../shared/enums/base-view.enum';
-import { EventVenueModel } from '../../../shared/models/event-venue.model';
+import { VenueModel } from '../../../shared/models/venue.model';
 
 @Component({
   selector: 'app-venues',
@@ -15,7 +15,7 @@ import { EventVenueModel } from '../../../shared/models/event-venue.model';
 })
 export class VenuesComponent extends BaseComponent implements OnInit {
   
-  public venues: EventVenueModel[]
+  public venues: VenueModel[]
   public selectedView: BaseViewEnum
   public BaseViewEnum = BaseViewEnum
 
@@ -25,9 +25,7 @@ export class VenuesComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedView = BaseViewEnum.Table
-    
     this.initVenues();
-    
   }
   
   private initVenues(): void {

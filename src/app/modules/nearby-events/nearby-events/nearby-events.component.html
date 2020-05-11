@@ -1,1 +1,5 @@
-<p>nearby-events works!</p>
+<h2 translate="nearbyEvents.title"></h2>
+
+<app-nearby-events-filter></app-nearby-events-filter>
+
+<app-nearby-events-list [events]="filteredEvents" *ngIf="selectedView === BaseViewEnum.Table"></app-nearby-events-list>

@@ -3,7 +3,7 @@ import {
   Input,
   OnInit
 } from '@angular/core';
-import { EventVenueModel } from '../../../shared/models/event-venue.model';
+import { VenueModel } from '../../../shared/models/venue.model';
 
 @Component({
   selector: 'app-venue-list',
@@ -11,7 +11,7 @@ import { EventVenueModel } from '../../../shared/models/event-venue.model';
   styleUrls: ['./venue-list.component.scss']
 })
 export class VenueListComponent implements OnInit {
-  @Input()venues: EventVenueModel[]
+  @Input()venues: VenueModel[]
 
   constructor() { }
 

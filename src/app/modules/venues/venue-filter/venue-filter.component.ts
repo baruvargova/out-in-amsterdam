@@ -28,7 +28,6 @@ export class VenueFilterComponent extends BaseComponent implements OnInit {
   
   public form: FormGroup
   
-  
   public cities$: Observable<string[]>
   public citiesInput$ = new Subject<string>()
   citiesFocus$ = new Subject<string>()
