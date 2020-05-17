@@ -12,13 +12,17 @@
     </thead>
     <tbody>
       <tr *ngFor="let venue of venues">
-        <td>{{venue.title}}</td>
-        <td>{{venue.location.city}}</td>
-        <td>{{venue.location.zipcode}}</td>
-        <td>{{venue.location.adress}}</td>
-        <td>{{venue.dates.startYear}}</td>
+        <td>{{ venue.title }}</td>
+        <td>{{ venue.location.city }}</td>
+        <td>{{ venue.location.zipcode }}</td>
+        <td>{{ venue.location.adress }}</td>
+        <td>{{ venue.dates.startYear }}</td>
         <td>
-          <a class="btn btn-link" translate="venues.detail" [routerLink]="[venue.trcid, 'detail']"></a>
+          <a
+            class="btn btn-link"
+            translate="venues.detail"
+            [routerLink]="[venue.trcid, 'detail']"
+          ></a>
         </td>
       </tr>
     </tbody>

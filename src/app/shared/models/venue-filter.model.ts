@@ -1,9 +1,9 @@
 export class VenueFilterModel {
-  name: string
-  cities: string[]
-  startYear: number
-  zip: string
-  
+  public name: string
+  public cities: string[]
+  public startYear: number
+  public zip: string
+
   constructor(data?: any) {
     if (data) {
       this.name = data.name

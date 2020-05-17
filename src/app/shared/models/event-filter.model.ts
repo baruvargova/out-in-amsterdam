@@ -1,8 +1,8 @@
 export class EventFilterModel {
-  name: string
-  year: number
-  month: number
-  
+  public name: string
+  public year: number
+  public month: number
+
   constructor(data?: any) {
     if (data) {
       this.name = data.name

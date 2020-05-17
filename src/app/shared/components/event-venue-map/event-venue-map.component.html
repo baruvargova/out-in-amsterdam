@@ -1,34 +1,41 @@
-<google-map height="550px"
-            width="100%"
-            [options]="mapOptions"
-            (mapClick)="closeInfo()">
-
-  <map-marker #marker
-              *ngFor="let venueMarker of venueMarkers"
-              [position]="venueMarker.position"
-              [options]="venueMarker.options"
-              (mapClick)="openInfoWindow(marker, venueMarker)">
+<google-map height="550px" width="100%" [options]="mapOptions" (mapClick)="closeInfo()">
+  <map-marker
+    #marker
+    *ngFor="let venueMarker of venueMarkers"
+    [position]="venueMarker.position"
+    [options]="venueMarker.options"
+    (mapClick)="openInfoWindow(marker, venueMarker)"
+  >
   </map-marker>
 
-  <map-marker #marker
-              *ngFor="let eventMarker of eventMarkers"
-              [position]="eventMarker.position"
-              [options]="eventMarker.options"
-              (mapClick)="openInfoWindow(marker, eventMarker)">
+  <map-marker
+    #marker
+    *ngFor="let eventMarker of eventMarkers"
+    [position]="eventMarker.position"
+    [options]="eventMarker.options"
+    (mapClick)="openInfoWindow(marker, eventMarker)"
+  >
   </map-marker>
 
   <map-info-window #infoWindow (closeclick)="closeInfo()">
     <div class="p-2" *ngIf="selectedMarker">
-      <div class="info-window-title">{{selectedMarker.title}}</div>
+      <div class="info-window-title">{{ selectedMarker.title }}</div>
 
-      <div class="mt-2">{{selectedMarker.location.adress}}</div>
-      <div class="mb-2">{{selectedMarker.location.zipcode}} {{selectedMarker.location.city}}</div>
+      <div class="mt-2">{{ selectedMarker.location.adress }}</div>
+      <div class="mb-2">
+        {{ selectedMarker.location.zipcode }} {{ selectedMarker.location.city }}
+      </div>
 
-      <a class="d-block" *ngFor="let link of selectedMarker.urls" [href]="link" target="_blank">{{link}}</a>
+      <a class="d-block" *ngFor="let link of selectedMarker.urls" [href]="link" target="_blank">{{
+        link
+      }}</a>
 
-      <a *ngIf="selectedMarker.isVenue" class="mt-2 btn btn-sm btn-info" [routerLink]="['/venues', selectedMarker.trcid, 'detail']" translate="venues.detail"></a>
+      <a
+        *ngIf="selectedMarker.isVenue"
+        class="mt-2 btn btn-sm btn-info"
+        [routerLink]="['/venues', selectedMarker.trcid, 'detail']"
+        translate="venues.detail"
+      ></a>
     </div>
   </map-info-window>
-
 </google-map>
-

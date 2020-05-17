@@ -1,13 +1,11 @@
-import {
-  OnDestroy
-} from '@angular/core';
+import { OnDestroy } from '@angular/core'
 
-import { BehaviorSubject, Subject } from 'rxjs'
+import { Subject } from 'rxjs'
 
 export abstract class BaseComponent implements OnDestroy {
   public alive$ = new Subject<boolean>()
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.alive$.next(false)
   }
 }

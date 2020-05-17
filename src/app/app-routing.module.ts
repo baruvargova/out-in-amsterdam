@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from './shared/components/layout/layout.component';
-import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
 
+import { LayoutComponent } from './shared/components/layout/layout.component'
+import { NotFoundComponent } from './shared/components/not-found/not-found.component'
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
       {
         path: 'venues',
         loadChildren: () =>
-          import('./modules/venues/venues.module').then(mod => mod.VenuesModule),
+          import('./modules/venues/venues.module').then((mod) => mod.VenuesModule),
       },
       {
         path: 'not-found',
@@ -27,13 +27,13 @@ const routes: Routes = [
         path: '**',
         pathMatch: 'full',
         redirectTo: 'not-found',
-      }
-    ]
-  }
-];
+      },
+    ],
+  },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

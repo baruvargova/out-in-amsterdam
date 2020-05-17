@@ -1,25 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { ViewToggleComponent } from './view-toggle.component';
+import { ViewToggleComponent } from './view-toggle.component'
 
 describe('ViewToggleComponent', () => {
-  let component: ViewToggleComponent;
-  let fixture: ComponentFixture<ViewToggleComponent>;
+  let component: ViewToggleComponent
+  let fixture: ComponentFixture<ViewToggleComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewToggleComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [ViewToggleComponent],
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewToggleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(ViewToggleComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

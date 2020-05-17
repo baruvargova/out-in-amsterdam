@@ -10,9 +10,9 @@ $image-height: 250px;
 }
 
 .images {
-  height: $image-height;
-  max-width: 100%;
   display: flex;
+  max-width: 100%;
+  height: $image-height;
   overflow: auto hidden;
 
   .img-wrapper {

@@ -1,20 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  take,
-  takeUntil
-} from 'rxjs/operators';
-import { VenueService } from '../../../core/services/venue.service';
-import { BaseComponent } from '../../../shared/components/base/base.component';
-import { BaseViewEnum } from '../../../shared/enums/base-view.enum';
-import { VenueModel } from '../../../shared/models/venue.model';
+import { Component, OnInit } from '@angular/core'
+
+import { take, takeUntil } from 'rxjs/operators'
+
+import { VenueService } from '../../../core/services/venue.service'
+import { BaseComponent } from '../../../shared/components/base/base.component'
+import { BaseViewEnum } from '../../../shared/enums/base-view.enum'
+import { VenueModel } from '../../../shared/models/venue.model'
 
 @Component({
   selector: 'app-venues',
   templateUrl: './venues.component.html',
-  styleUrls: ['./venues.component.scss']
+  styleUrls: ['./venues.component.scss'],
 })
 export class VenuesComponent extends BaseComponent implements OnInit {
-  
   public venues: VenueModel[]
   public selectedView: BaseViewEnum
   public BaseViewEnum = BaseViewEnum
@@ -23,35 +21,32 @@ export class VenuesComponent extends BaseComponent implements OnInit {
     super()
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.selectedView = BaseViewEnum.Table
-    this.initVenues();
+    this.initVenues()
   }
-  
+
   private initVenues(): void {
-    this.venueService.venueFilter.pipe(takeUntil(this.alive$)).subscribe(filter => {
+    this.venueService.venueFilter.pipe(takeUntil(this.alive$)).subscribe((filter) => {
       this.resetList()
       this.updateList()
     })
   }
-  
+
   private resetList(): void {
     this.venues = []
   }
-  
+
   private updateList(): void {
-    this.venueService.getVenues()
-    .pipe(
-      takeUntil(this.alive$),
-      take(1)
-    )
-    .subscribe(venues => {
-      this.venues = venues
-    })
+    this.venueService
+      .getVenues()
+      .pipe(takeUntil(this.alive$), take(1))
+      .subscribe((venues) => {
+        this.venues = venues
+      })
   }
-  
+
   public switchViewTo(view: BaseViewEnum): void {
     this.selectedView = view
   }
-
 }

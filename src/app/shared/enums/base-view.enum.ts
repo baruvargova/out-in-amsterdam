@@ -1,4 +1,4 @@
 export enum BaseViewEnum {
   Table,
-  Map
+  Map,
 }

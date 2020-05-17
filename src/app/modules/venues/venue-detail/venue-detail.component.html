@@ -1,23 +1,25 @@
 <div class="venue-detail p-4">
-  <h1>{{venue.title}}</h1>
+  <h1>{{ venue.title }}</h1>
 
   <div class="row">
     <div class="col-12 col-sm-4 mt-2" *ngIf="venue.mainMedia">
       <div class="main-media">
-        <img [src]="venue.mainMedia.url">
+        <img [src]="venue.mainMedia.url" />
       </div>
     </div>
     <div class="col-12 col-sm-8 mt-2">
       <div>
-        {{venueDetail.calendarsummary}}
+        {{ venueDetail.calendarsummary }}
       </div>
 
       <div class="mt-2 mb-2">
-        {{venue.location.adress}} <br>
-        {{venue.location.zipcode}}, {{venue.location.city}}
+        {{ venue.location.adress }} <br />
+        {{ venue.location.zipcode }}, {{ venue.location.city }}
       </div>
 
-      <a class="d-block" *ngFor="let link of venue.urls" [href]="link" target="_blank">{{link}}</a>
+      <a class="d-block" *ngFor="let link of venue.urls" [href]="link" target="_blank">
+        {{ link }}
+      </a>
     </div>
   </div>
 
@@ -26,10 +28,14 @@
   <div class="images mt-2" *ngIf="venue.media?.length">
     <ng-container *ngFor="let media of venue.media">
       <div class="img-wrapper mr-1">
-        <img [src]="media.url">
+        <img [src]="media.url" />
       </div>
     </ng-container>
   </div>
 
-  <app-nearby-events class="mt-5 d-block" [nearbyEvents]="nearbyEvents" [venue]="venue"></app-nearby-events>
+  <app-nearby-events
+    class="mt-5 d-block"
+    [nearbyEvents]="nearbyEvents"
+    [venue]="venue"
+  ></app-nearby-events>
 </div>
