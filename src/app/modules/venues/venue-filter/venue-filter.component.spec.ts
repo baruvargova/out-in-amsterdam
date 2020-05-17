@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { FormBuilder } from '@angular/forms'
 
 import { VenueFilterComponent } from './venue-filter.component'
 
@@ -9,6 +10,7 @@ describe('VenueFilterComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [VenueFilterComponent],
+      providers: [FormBuilder],
     }).compileComponents()
   }))
 

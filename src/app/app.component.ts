@@ -8,8 +8,6 @@ import { TranslateService } from '@ngx-translate/core'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public title = 'out-in-amsterdam'
-
   constructor(translate: TranslateService) {
     translate.setDefaultLang('en')
     translate.use('en')

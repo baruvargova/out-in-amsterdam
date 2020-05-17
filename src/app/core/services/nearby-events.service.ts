@@ -11,7 +11,7 @@ import { EventFilterModel } from '../../shared/models/event-filter.model'
 import { EventModel } from '../../shared/models/event.model'
 import { VenueModel } from '../../shared/models/venue.model'
 
-import { VENUES_DATA } from '../mock-data/venues'
+import { VENUES_DATA } from '../mocks/venues'
 import { VenueService } from './venue.service'
 
 @Injectable({

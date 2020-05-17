@@ -17,7 +17,7 @@ import { VenueModel } from '../../../shared/models/venue.model'
 })
 export class VenueDetailComponent extends BaseComponent implements OnInit {
   public venue: VenueModel
-  public nearbyEvents: EventModel
+  public nearbyEvents: EventModel[]
   public venueDetail: EventVenueDetailModel
 
   constructor(private route: ActivatedRoute, private translate: TranslateService) {

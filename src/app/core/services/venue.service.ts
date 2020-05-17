@@ -10,7 +10,7 @@ import { findInArray, matchYear, searchBySubstring } from '../../shared/helpers/
 import { VenueFilterModel } from '../../shared/models/venue-filter.model'
 import { VenueModel } from '../../shared/models/venue.model'
 
-import { VENUES_DATA } from '../mock-data/venues'
+import { VENUES_DATA } from '../mocks/venues'
 
 @Injectable({
   providedIn: 'root',
