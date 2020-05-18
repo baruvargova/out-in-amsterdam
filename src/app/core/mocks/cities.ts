@@ -1,0 +1,18 @@
+export const ALL_CITIES = [
+  'AALSMEER',
+  'ALMERE',
+  'AMSTERDAM',
+  'BROEK IN WATERLAND',
+  'HAARLEM',
+  'HUIZEN',
+  'KATWOUDE',
+  'MONNICKENDAM',
+  'OOSTHUIZEN',
+  'OOSTZAAN',
+  'OUD ZUILEN',
+  'PURMEREND',
+  'SCHIPHOL',
+  'WEESP',
+  'ZAANDAM',
+  'ZAANDIJK',
+]
