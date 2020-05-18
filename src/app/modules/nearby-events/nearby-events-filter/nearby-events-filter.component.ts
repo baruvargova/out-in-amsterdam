@@ -21,15 +21,9 @@ export class NearbyEventsFilterComponent extends BaseComponent implements OnInit
     super()
   }
 
-  public ngOnInit(): void {
-    this.initForm()
-    this.initValueChanges()
-    this.months = MONTHS
-  }
-
   private initForm(): void {
     this.form = this.fb.group({
-      name: ['name'],
+      name: [''],
       year: [null],
       month: [null],
     })
@@ -38,16 +32,21 @@ export class NearbyEventsFilterComponent extends BaseComponent implements OnInit
   }
 
   private initValueChanges(): void {
-    this.form.valueChanges
-      .pipe(takeUntil(this.alive$), distinctUntilChanged(), debounceTime(DEFAULT_DEBOUNCE))
-      .subscribe((value: EventFilterModel) => {
+    this.form
+      .get('name')
+      .valueChanges.pipe(
+        takeUntil(this.alive$),
+        distinctUntilChanged(),
+        debounceTime(DEFAULT_DEBOUNCE)
+      )
+      .subscribe((name: string) => {
         this.nearbyEventService.eventFilter.next(new EventFilterModel({ ...this.form.value, name }))
       })
 
     this.form
       .get('month')
       .valueChanges.pipe(takeUntil(this.alive$), distinctUntilChanged())
-      .subscribe((month: string[]) => {
+      .subscribe((month: number) => {
         this.nearbyEventService.eventFilter.next(
           new EventFilterModel({ ...this.form.value, month })
         )
@@ -63,5 +62,11 @@ export class NearbyEventsFilterComponent extends BaseComponent implements OnInit
       .subscribe((year: number) => {
         this.nearbyEventService.eventFilter.next(new EventFilterModel({ ...this.form.value, year }))
       })
+  }
+
+  public ngOnInit(): void {
+    this.initForm()
+    this.initValueChanges()
+    this.months = MONTHS
   }
 }

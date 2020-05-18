@@ -1,4 +1,5 @@
 import { EventDateModel } from '../models/event.model'
+import { isNullOrUndefined } from './common.helper'
 
 export function searchBySubstring(text: string, searchText: string): boolean {
   if (searchText) {
@@ -23,28 +24,28 @@ export function matchYear(year: number, yearToCompare: number): boolean {
 }
 
 export function matchEventDate(date: EventDateModel, month: number, year: number): boolean {
-  if (month || year) {
+  if (!isNullOrUndefined(month) || !isNullOrUndefined(year)) {
     if (date.startdate && date.enddate) {
       // event with duration
-      if (month && year) {
+      if (!isNullOrUndefined(month) && !isNullOrUndefined(year)) {
         return date.eventDuration.some((x) => x.month === month && x.year === year)
       }
-      if (month) {
+      if (!isNullOrUndefined(month)) {
         return date.eventDuration.some((x) => x.month === month)
       }
-      if (year) {
+      if (!isNullOrUndefined(year)) {
         return date.eventDuration.some((x) => x.year === year)
       }
     }
     if (date.startdate) {
       // one day event
-      if (month && year) {
+      if (!isNullOrUndefined(month) && !isNullOrUndefined(year)) {
         return month === date.startMonth && year === date.startYear
       }
-      if (month) {
+      if (!isNullOrUndefined(month)) {
         return month === date.startMonth
       }
-      if (year) {
+      if (!isNullOrUndefined(year)) {
         return year === date.startYear
       }
     }
