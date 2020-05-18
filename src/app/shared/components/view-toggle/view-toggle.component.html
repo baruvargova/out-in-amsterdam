@@ -1,11 +1,11 @@
 <form [formGroup]="form">
   <div class="btn-group btn-group-toggle" ngbRadioGroup formControlName="view">
     <label ngbButtonLabel class="btn-primary">
-      <input ngbButton type="radio" [value]="BaseViewEnum.Table" />
+      <input ngbButton type="radio" [value]="BaseViewEnum.Table" id="table" />
       {{ 'common.view.' + BaseViewEnum.Table | translate }}
     </label>
     <label ngbButtonLabel class="btn-primary">
-      <input ngbButton type="radio" [value]="BaseViewEnum.Map" />
+      <input ngbButton type="radio" [value]="BaseViewEnum.Map" id="map" />
       {{ 'common.view.' + BaseViewEnum.Map | translate }}
     </label>
   </div>

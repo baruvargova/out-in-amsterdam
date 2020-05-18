@@ -29,7 +29,7 @@ export class NearbyEventsFilterComponent extends BaseComponent implements OnInit
 
   private initForm(): void {
     this.form = this.fb.group({
-      name: [''],
+      name: ['name'],
       year: [null],
       month: [null],
     })
